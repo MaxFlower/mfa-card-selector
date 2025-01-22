@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mafia Card Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(5, 100px);
+            grid-gap: 10px;
+        }
+
+        .card {
+            width: 100px;
+            height: 150px;
+            background-color: #ccc;
+            border: 2px solid #333;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .card.revealed {
+            background-size: cover;
+            background-position: center;
+            color: white;
+            cursor: default;
+        }
+
+        .sidebar {
+            margin-left: 20px;
+            max-width: 300px;
+        }
+
+        .sidebar h2 {
+            margin: 0;
+            padding: 10px;
+            background-color: #444;
+            color: white;
+            text-align: center;
+        }
+
+        .log {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .log p {
+            margin: 5px 0;
+        }
+
+        .buttons {
+            margin: 20px 0;
+        }
+
+        .buttons button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #444;
+            color: white;
+        }
+
+        .buttons button:disabled {
+            background-color: #888;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+<h1>Mafia Card Game</h1>
+<div class="buttons">
+    <button id="startButton">Start Session</button>
+    <button id="endButton" disabled>End Session</button>
+</div>
+<div class="container">
+    <div class="cards" id="cards"></div>
+    <div class="sidebar">
+        <h2>Player Log</h2>
+        <div class="log" id="log"></div>
+    </div>
+</div>
+
+<script src="main.js" type="module"></script>
+</body>
+</html>
